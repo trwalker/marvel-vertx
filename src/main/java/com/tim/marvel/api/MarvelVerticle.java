@@ -1,9 +1,9 @@
 package com.tim.marvel.api;
 
+import com.google.inject.Inject;
+
 import io.vertx.core.AbstractVerticle;
 import io.vertx.ext.web.Router;
-
-import javax.inject.Inject;
 
 public class MarvelVerticle extends AbstractVerticle {
 
