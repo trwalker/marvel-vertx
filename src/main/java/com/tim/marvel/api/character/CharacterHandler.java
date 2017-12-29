@@ -1,12 +1,25 @@
 package com.tim.marvel.api.character;
 
+import com.google.inject.Inject;
+import io.vertx.core.json.Json;
 import io.vertx.ext.web.RoutingContext;
 
 public class CharacterHandler {
+
+    private final CharacterService characterService;
+
+    @Inject
+    public CharacterHandler(CharacterService characterService) {
+        this.characterService = characterService;
+    }
+
     public void getCharacter(RoutingContext context) {
+        String name = context.request().getParam("name");
+        Character character = characterService.GetCharacter(name);
+
         context.response()
             .putHeader("content-type", "application/json")
-            .end(String.format("{ \"name\": \"%s\" }", context.request().getParam("name")));
+            .end(Json.encode(character));
     }
 
     public void getCharacterList(RoutingContext context) {

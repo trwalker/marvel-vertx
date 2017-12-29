@@ -26,6 +26,8 @@ dependencies {
 
     compile group: 'com.google.inject', name: 'guice', version: '4.0'
     compile group: 'com.google.inject.extensions', name: 'guice-assistedinject', version: '4.0'
+
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
 }
 
 mainClassName = 'com.tim.marvel.api.MarvelApp'
