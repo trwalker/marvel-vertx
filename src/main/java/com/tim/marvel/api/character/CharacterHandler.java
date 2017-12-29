@@ -23,8 +23,11 @@ public class CharacterHandler {
     }
 
     public void getCharacterList(RoutingContext context) {
+
+        Character[] characters = new Character[] { new Character("foo"), new Character("bar")};
+
         context.response()
                 .putHeader("content-type", "application/json")
-                .end("{ \"characters\": []}");
+                .end(Json.encode(characters));
     }
 }
