@@ -15,7 +15,7 @@ public class CharacterHandler {
 
     public void getCharacter(RoutingContext context) {
         String name = context.request().getParam("name");
-        Character character = characterService.GetCharacter(name);
+        Character character = characterService.getCharacter(name);
 
         context.response()
             .putHeader("content-type", "application/json")
@@ -24,7 +24,7 @@ public class CharacterHandler {
 
     public void getCharacterList(RoutingContext context) {
 
-        Character[] characters = new Character[] { new Character("foo"), new Character("bar")};
+        Character[] characters = characterService.getCharaterList();
 
         context.response()
                 .putHeader("content-type", "application/json")

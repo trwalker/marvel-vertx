@@ -1,15 +1,8 @@
 package com.tim.marvel.api.character;
 
-import com.google.inject.Inject;
+public interface CharacterService {
 
-public class CharacterService {
+    Character getCharacter(String name);
 
-    @Inject
-    public CharacterService() {
-
-    }
-
-    public Character GetCharacter(String name) {
-        return new Character(name);
-    }
+    Character[] getCharaterList();
 }
