@@ -3,9 +3,7 @@ package com.tim.marvel.api;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
-import com.tim.marvel.api.character.CharacterHandler;
-import com.tim.marvel.api.character.CharacterService;
-import com.tim.marvel.api.character.MarvelCharacterService;
+import com.tim.marvel.api.character.*;
 import io.vertx.core.Vertx;
 
 public class MarvelModule extends AbstractModule {
@@ -20,6 +18,7 @@ public class MarvelModule extends AbstractModule {
         configureApp();
         configureHandlers();
         configureServices();
+        configureRepositories();
     }
 
     private void configureApp() {
@@ -33,5 +32,9 @@ public class MarvelModule extends AbstractModule {
 
     private void configureServices() {
         bind(CharacterService.class).to(MarvelCharacterService.class).asEagerSingleton();
+    }
+
+    private void configureRepositories() {
+        bind(CharacterRepository.class).to(MarvelApiCharacterRepository.class).asEagerSingleton();
     }
 }
