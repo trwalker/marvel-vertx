@@ -15,19 +15,21 @@ public class CharacterHandler {
 
     public void getCharacter(RoutingContext context) {
         String name = context.request().getParam("name");
-        Character character = characterService.getCharacter(name);
 
-        context.response()
-            .putHeader("content-type", "application/json")
-            .end(Json.encode(character));
+        characterService.getCharacter(name, character -> {
+            context
+                .response()
+                .putHeader("content-type", "application/json")
+                .end(Json.encode(character));
+        });
     }
 
     public void getCharacterList(RoutingContext context) {
-
-        Character[] characters = characterService.getCharaterList();
-
-        context.response()
+        characterService.getCharaterList(characters -> {
+            context
+                .response()
                 .putHeader("content-type", "application/json")
                 .end(Json.encode(characters));
+        });
     }
 }

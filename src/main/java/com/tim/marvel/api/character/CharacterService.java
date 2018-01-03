@@ -1,8 +1,10 @@
 package com.tim.marvel.api.character;
 
+import io.vertx.core.Handler;
+
 public interface CharacterService {
 
-    Character getCharacter(String name);
+    void getCharacter(String name, Handler<Character> callback);
 
-    Character[] getCharaterList();
+    void getCharaterList(Handler<Character[]> callback);
 }

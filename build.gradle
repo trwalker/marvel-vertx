@@ -20,9 +20,9 @@ sourceCompatibility = '1.8'
 dependencies {
     compile group: 'io.vertx', name: 'vertx-circuit-breaker', version: "$vertxVersion"
     compile group: 'io.vertx', name: 'vertx-core', version: "$vertxVersion"
-    compile group: 'io.vertx', name: 'vertx-redis-client', version: "$vertxVersion"
     compile group: 'io.vertx', name: 'vertx-unit', version: "$vertxVersion"
     compile group: 'io.vertx', name: 'vertx-web', version: "$vertxVersion"
+    compile group: 'io.vertx', name: 'vertx-web-client', version: "$vertxVersion"
 
     compile group: 'com.google.inject', name: 'guice', version: '4.0'
     compile group: 'com.google.inject.extensions', name: 'guice-assistedinject', version: '4.0'
