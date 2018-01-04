@@ -19,6 +19,7 @@ sourceCompatibility = '1.8'
 
 dependencies {
     compile group: 'io.vertx', name: 'vertx-circuit-breaker', version: "$vertxVersion"
+    compile group: 'io.vertx', name: 'vertx-config', version: "$vertxVersion"
     compile group: 'io.vertx', name: 'vertx-core', version: "$vertxVersion"
     compile group: 'io.vertx', name: 'vertx-unit', version: "$vertxVersion"
     compile group: 'io.vertx', name: 'vertx-web', version: "$vertxVersion"

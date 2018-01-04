@@ -4,6 +4,8 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import com.tim.marvel.api.character.*;
+import com.tim.marvel.api.config.ConfigService;
+import com.tim.marvel.api.config.MarvelConfigService;
 import com.tim.marvel.api.http.VertxWebClientAdapter;
 import com.tim.marvel.api.http.WebClientAdapter;
 import io.vertx.core.Vertx;
@@ -34,6 +36,7 @@ public class MarvelModule extends AbstractModule {
     }
 
     private void configureServices() {
+        bind(ConfigService.class).to(MarvelConfigService.class).asEagerSingleton();
         bind(CharacterService.class).to(MarvelCharacterService.class).asEagerSingleton();
     }
 
