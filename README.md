@@ -2,7 +2,7 @@
 
 ### Local
 ```
-gradle run
+gradle build
 ENV=dev gradle run
 ```
 
